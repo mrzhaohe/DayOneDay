@@ -1,0 +1,8 @@
+
+
+pod "YYKit"
+pod "MWPhotoBrowser"
+
+target "YY" do
+end
+
