@@ -196,7 +196,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
 //** 是否被选中
 - (BOOL)photoBrowser:(MWPhotoBrowser *)photoBrowser isPhotoSelectedAtIndex:(NSUInteger)index {
 
