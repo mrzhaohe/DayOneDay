@@ -1,7 +1,7 @@
 # DayOneDay
 
 ##1.MWPhotoBrowser 使用
-> 参考<https://blog.csdn.net/qq_22157341/article/details/67636905>
+ [参考](https://blog.csdn.net/qq_22157341/article/details/67636905)
 
 		MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
 
