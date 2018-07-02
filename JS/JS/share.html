@@ -1,0 +1,105 @@
+<html>
+    <header>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+<!--     jquery  bootcdn  -->
+        <script src="https://cdn.bootcss.com/jquery/1.12.2/jquery.min.js"></script>
+        <script type="text/javascript">
+        
+        
+        
+        
+        function onClick(sns_type) {
+            var dict = {"trigger":"sns",
+                "data": {
+                    "sns_type":sns_type,
+                    "desc":"我是分享的内容",
+                    "title":"测试分享",
+                    "url":"https://www.baidu.com",
+                    "imgUrl":"分享图表"
+                }};
+            // JS通知WKWebView
+            window.webkit.messageHandlers.fireApp.postMessage(dict);
+        }
+        
+        
+        
+        function screenshotReady(){
+            
+            screenshotShow();
+            var dict = {"trigger":"screenshotReadyOver",
+                "data": {
+                    "sns_type":"3",
+                    "desc":"我是分享的内容",
+                    "title":"测试分享",
+                    "url":"https://www.baidu.com",
+                    "imgUrl":"分享图表"
+                }};
+            //截屏准备
+            window.webkit.messageHandlers.screenshotReadyOver.postMessage(dict);
+           
+        
+        }
+     
+     function screenshotReadyOver (){
+         
+         var dict = {"trigger":"screenshotReadyOver",
+             "data": {
+                 "sns_type":"3",
+                 "desc":"我是分享的内容",
+                 "title":"测试分享",
+                 "url":"https://www.baidu.com",
+                 "imgUrl":"分享图表"
+             }};
+         //截屏准备
+         window.webkit.messageHandlers.screenshotReadyOver.postMessage(dict);
+         
+         
+     }
+     
+     function screenshotShow() {
+         var btn1 = $(".first");
+         btn1.hide();
+     }
+     
+        function screenshotEnd() {
+
+            var btn1 = $(".first");
+            btn1.show();
+           
+        }
+        
+        
+        </script>
+        
+        <style type="text/css">
+            
+            a {
+                background-color:rgb(122,211,250);
+                display:block;
+                width:200px;
+                height:40px;
+                font-size:36px;
+                text-align:center;
+                padding:20px 20px;
+                color:white;
+                white-space:nowrap;
+            }
+            
+        </style>
+        
+    </header>
+    
+    <body>
+        <br/>
+        <br/>
+        <a type="button" onclick="onClick('1')" class="first" data-status="show">普通分享</a>
+        <br/>
+        <br/>
+        <a type="button" onclick="onClick('2')" class="second">图片分享</a>
+        <br/>
+        <br/>
+        <a type="button" onclick="onClick('3')" class="third">混合分享</a>
+        
+    </body>
+</html>
